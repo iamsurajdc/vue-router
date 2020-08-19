@@ -26,5 +26,7 @@ export const routes = [
       { path: ":id/edit", component: UserEdit, name: "userEdit" },
     ],
   },
-  // { path: 'home', component: Home }
+  { path: '/redirect-me', redirect: {path: '/user'} },
+  { path: '*', redirect: '/' }
+
 ];

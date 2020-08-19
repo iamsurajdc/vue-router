@@ -4,11 +4,7 @@
     <p>User loaded has ID: {{ this.$route.params.id }}</p>
     <router-link
       tag="button"
-      :to="{
-        name: 'userEdit',
-        params: { from: 'params', to: 'param' },
-        query: { local: 'en', q: 20 },
-      }"
+      :to="link"
       class="btn btn-primary"
       >Edit User</router-link
     >
@@ -16,7 +12,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      link: {
+        name: 'userEdit',
+        params: { from: 'params', to: 'param' },
+        query: { local: 'en', q: 20 },
+        hash: '#data'
+      }
+
+    }
+  }
+};
 </script>
 
 <style></style>
